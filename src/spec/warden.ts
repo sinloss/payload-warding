@@ -19,9 +19,7 @@ import ward from "./definition/ward";
  * Warden of the north!
  */
 export class Warden {
-  constructor(private readonly spec: Spec) {
-    this.spec = spec;
-  }
+  constructor(private readonly spec: Spec) {}
 
   /**
    * Wards the given {@link CollectionConfig} or {@link GlobalConfig}.
