@@ -1,5 +1,10 @@
 # A Collections / Globals Backed Payload RBAC Plugin
 
+- Easily customizable `user` and `role` collection generation.
+- Fine-grained access control configuration. All are editable in the `role` editing page!
+- Fully customizable `access` functions and access control handler functions (*for endpoints*).
+- Automatically populated `root` role with all access privileges. And a `root` user with this role as well!
+
 ## 📖 Table of Contents <a name="table-of-contents"></a>
 
 - [📖 Table of Contents](#table-of-contents)
@@ -31,7 +36,8 @@
 
 ```shell
 yarn add payload-warding
-# or
+```
+```shell
 npm i payload-warding
 ```
 
@@ -136,7 +142,7 @@ type Built = {
   initializationExtra?: { user: any; role: any };
 };
 ```
-See [factory/spec.ts](src/factory/spec.ts) for details.
+Additional config options could be easily added to the user and role via this, See [factory/spec.ts](src/factory/spec.ts) for details.
 * `mute`
 ```javascript
 /**
