@@ -1,7 +1,7 @@
 import type { AccessArgs } from "payload/types";
 
-import { access } from ".";
 import basic from "./kit/basic";
+import access from "./spec/access";
 import type { Expectation, LenientOpts, Opts, Spec } from "./types";
 
 const defaults: Opts = {

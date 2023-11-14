@@ -7,7 +7,7 @@
   },
   "description": "A Collections / Globals Backed Payload RBAC Plugin",
   "main": "dist/index.js",
-  "types": "dist/types.d.ts",
+  "types": "dist/index.d.ts",
   "keywords": [
     "payload",
     "cms",
