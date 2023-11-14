@@ -1,5 +1,17 @@
 # A Collections / Globals Backed Payload RBAC Plugin
 
+## 📖 Table of Contents
+
+- [✨ Synopsis](#✨-synopsis)
+    - [📖 Table of Contents](#📖-table-of-contents)
+- [⚙️ Usage](#⚙️-usage)
+    - [🎨 Options](#options)
+- [🔐 Authorization](#🔐-authorization)
+    - [📚 Collections](#📚-collections)
+    - [🧭 Globals](#🧭-globals)
+    - [🌠 Endpoints](#🌠-endpoints)
+    - [✏️ Note](#✏️-note)
+
 ## ✨ Synopsis
 
 * This plugin collects information from `collections`, `globals` and user provided extra `synopses` to build a collection of unified `features` which looks like the following data structure:
@@ -17,12 +29,15 @@
 
 ## ⚙️ Usage
 
-Looks like this:
+```shell
+yarn add payload-warding
+# or
+npm i payload-warding
+```
 
 ```javascript
 // ...
-import warding from "payload-warding";
-import convention from "payload-warding/convention";
+import warding, { convention } from "payload-warding";
 
 //...
 export default buildConfig({
@@ -43,7 +58,7 @@ export default buildConfig({
 
 The `convention.opts` will merge your options with predefined default options, see [convention.ts](src/convention.ts) for details.
 
-### Options
+### 🎨 Options
 
 * `root`
 ```javascript
@@ -132,7 +147,7 @@ mute?: boolean;
 
 ## 🔐 Authorization
 
-### Collections <a name="Collections"></a>
+### 📚 Collections
 
 Authorizations of ***Collections*** are provided by adding `access` functions to all possible `collections`, `fields`...and so on. The said `access` functions will ask for a specific `feature`, `traits`, `verbs` combination to be present, or otherwise reject the operation it is assigned to. 
 
@@ -153,11 +168,11 @@ Any user who has a `role` with a `feature` **chad** and any `trait` (*which, if 
 }
 ```
 
-### Globals
+### 🧭 Globals
 
-Authorizations of ***Globals*** are provided the same way as [Collections](#Collections)
+Authorizations of ***Globals*** are provided the same way as [Collections](#collections)
 
-### Endpoints
+### 🌠 Endpoints
 
 Authorizations of ***Endpoints*** are provided by prepending **check** functions in the `handler` function arrays. The **check** functions basically do the same as those `access` functions mentioned above, in which case the `verbs` are determined by the endpoint's http method as such:
 ```javascript
@@ -172,7 +187,7 @@ Authorizations of ***Endpoints*** are provided by prepending **check** functions
   delete: "delete",
 }
 ```
-
+### ✏️ Note
 ***
 > **Note**
 > You can also choose to skip the authorization for specific `collections`, `globals` or some of their `fields` or `endpoints` by assign the `custom.warding.should` to false or `custom.warding.should.[verb]` flags of corresponding `verbs` to false. 
