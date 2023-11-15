@@ -62,7 +62,7 @@ export default buildConfig({
 // ...
 ```
 
-The `convention.opts` will merge your options with predefined default options, see [convention.ts](src/convention.ts) for details.
+The `convention.opts` will deeply merge your options with predefined default options using a function implements [*`RFC-7386 JSON Merge Patch`*](https://datatracker.ietf.org/doc/html/rfc7386), see [convention.ts](src/convention.ts) for details.
 
 ### 🎨 Options <a name="options"></a>
 

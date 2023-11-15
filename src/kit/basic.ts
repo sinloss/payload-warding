@@ -21,7 +21,9 @@ export function expect(
 }
 
 /**
- * Patchs a {@link PlainObject} with a key-value pair.
+ * Patchs a {@link PlainObject} with a key-value pair. This implements the
+ * RFC-7386. See {@link https://datatracker.ietf.org/doc/html/rfc7386} for
+ * details
  */
 export function patch(to: PlainObject, key: string, value: any): void {
   if (!to) return;
@@ -56,7 +58,8 @@ export function patch(to: PlainObject, key: string, value: any): void {
 }
 
 /**
- * Merges multiple subsequent {@link T}s into the first {@link T}.
+ * Merges multiple subsequent {@link T}s into the first {@link T}, deeply, using
+ * the {@link patch} function.
  */
 export function merge<T extends PlainObject>(to: T, ...froms: T[]): T {
   if (froms.length === 0) return to;
