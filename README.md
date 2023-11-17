@@ -195,7 +195,6 @@ Authorizations of ***Endpoints*** are provided by prepending **check** functions
 ```
 ### ✏️ Note <a name="note"></a>
 ***
-> **Note**
 > You can also choose to skip the authorization for specific `collections`, `globals` or some of their `fields` or `endpoints` by assigning the `custom.warding.should` to false or `custom.warding.should.[verb]` flags of corresponding `verbs` to false. 
 > ***
 > Alternatively, if an access function is customly assigned in `collections`, `globals` or `fields`, the authorization will always be skipped but a plugin generated authorization function `req.context.warding` will be attached to the access function argument. So that plugin users can decide how and when to call the plugin generated authorization function.
